@@ -31,33 +31,7 @@ The system follows a **Service-Oriented Architecture (SOA)** with six independen
 4. If a service needs data from another service, it uses **OpenFeign** to call that service via Eureka.
 5. **Config Service** provides environment-specific settings to all services at startup.
 
-   ┌─────────────────────┐
-│ API Gateway │ (Port 8080)
-│ (Entry Point for │
-│ Client) │
-└──────────┬──────────┘
-│
-┌──────────▼──────────┐
-│ Discovery Service │ (Port 8761)
-│ (Eureka - Service │
-│ Registry) │
-└──────────┬──────────┘
-│
-┌────────────────────────┼────────────────────────┐
-│ │ │
-┌───────────▼───────────┐ ┌─────────▼───────────┐ ┌─────────▼───────────┐
-│ Employee Service │ │ Department Service │ │ Organization Service│
-│ (CRUD Operations) │◄┼── (Feign Client) │ │ (Feign Client) │
-│ │ │ │ │ │
-└───────────────────────┘ └──────────────────────┘ └──────────────────────┘
-│ │
-└────────────┬───────────┘
-│
-┌──────────▼──────────┐
-│ Config Service │
-│ (Centralized Config)│
-└─────────────────────┘
-
+---
 
 ## ⚙️ Key Features & Implementation
 
@@ -106,8 +80,10 @@ Building this project gave me hands-on experience with:
 - **Centralized Configuration:** Managing environment-specific settings from one place.
 - **Containerization:** Packaging Java applications into Docker images.
 
+---
 
+## 🌟 Why This Project Stands Out
 
-
-
-
+- **Complete Architecture:** It is not a CRUD app. It is a system of microservices.
+- **Industry Standards:** Implements patterns used in companies like Uber, Amazon, and Netflix.
+- **Scalable Design:** New services can be added without modifying existing ones.
